@@ -336,13 +336,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 441877928165a4c45b8b57eacb7fb029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlyable: 1
+  isAutoThruster: 0
+  manualthruster: 0.9
+  rollforce: 30
+  yawForce: 150
   maxX: 4
   minX: -4
   maxY: 9.5
   minY: 1
   maxZ: 3.5
   minZ: -3.5
-  isFly: 1
 --- !u!114 &62883810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1091,6 +1095,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68cc5e3934984c4a9ed1050c8946e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlyable: 0
+  isAutoThruster: 0
+  manualthruster: 0
+  rollforce: 0
+  yawForce: 0
   maxX: 0
   minX: 0
   maxY: 0
@@ -2174,6 +2183,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8247708930201248774, guid: 7e8bb3fe362f46d468db643a94b8f062, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e8bb3fe362f46d468db643a94b8f062, type: 3}
 --- !u!1 &705507993
@@ -2713,13 +2726,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 441877928165a4c45b8b57eacb7fb029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlyable: 0
+  isAutoThruster: 0
+  manualthruster: 0.9
+  rollforce: 30
+  yawForce: 0
   maxX: 4
   minX: -4
   maxY: 0
   minY: 0
   maxZ: 3.5
   minZ: -3.5
-  isFly: 0
 --- !u!114 &892975952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3184,11 +3201,23 @@ PrefabInstance:
     m_TransformParent: {fileID: 2044247178}
     m_Modifications:
     - target: {fileID: 724034970950055138, guid: 40425f8d6ef506844b4ca79bfb0811df, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 724034970950055138, guid: 40425f8d6ef506844b4ca79bfb0811df, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1378870208413128552, guid: 40425f8d6ef506844b4ca79bfb0811df, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378870208413128552, guid: 40425f8d6ef506844b4ca79bfb0811df, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017752325128395085, guid: 40425f8d6ef506844b4ca79bfb0811df, type: 3}
+      propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4017752325128395085, guid: 40425f8d6ef506844b4ca79bfb0811df, type: 3}
@@ -3252,7 +3281,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6200698304648064511, guid: 40425f8d6ef506844b4ca79bfb0811df, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200698304648064511, guid: 40425f8d6ef506844b4ca79bfb0811df, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486375962501933048, guid: 40425f8d6ef506844b4ca79bfb0811df, type: 3}
+      propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6486375962501933048, guid: 40425f8d6ef506844b4ca79bfb0811df, type: 3}
@@ -5315,13 +5352,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 441877928165a4c45b8b57eacb7fb029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlyable: 0
+  isAutoThruster: 0
+  manualthruster: 0.9
+  rollforce: 30
+  yawForce: 0
   maxX: 4
   minX: -4
   maxY: 0.5
   minY: 0.5
   maxZ: 3.5
   minZ: -3.5
-  isFly: 0
 --- !u!65 &2044247175
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5331,7 +5372,7 @@ BoxCollider:
   m_GameObject: {fileID: 2044247173}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
