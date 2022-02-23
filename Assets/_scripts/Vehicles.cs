@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+//Base class
 public class Vehicles : MonoBehaviour
 {
     [SerializeField]
@@ -12,9 +12,9 @@ public class Vehicles : MonoBehaviour
     float _roll;
     float _forwardMov;
     //encapsulation
-    public float Yaw { get => _yaw;  set => _yaw = value; }
-    public float Pitch { get => _pitch; set => _pitch = value; }
-    public float Roll { get => _roll; set => _roll = value; }
+    public float Yaw { get => _yaw;  private set => _yaw = value; }
+    public float Pitch { get => _pitch; private set => _pitch = value; }
+    public float Roll { get => _roll; private set => _roll = value; }
     public float ForwardMov { get => _forwardMov; set => _forwardMov = value; }
 
     //overloading

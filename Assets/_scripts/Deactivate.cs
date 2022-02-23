@@ -7,6 +7,7 @@ public class Deactivate : MonoBehaviour
     [SerializeField] AudioSource planeAudio;
     [SerializeField] AudioSource carAudio;
     [SerializeField] AudioSource boatAudio;    
+    [SerializeField] AudioSource boatEngineAudio;    
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class Deactivate : MonoBehaviour
         planeAudio.Stop();
         carAudio.Stop();
         boatAudio.Stop();
+        boatEngineAudio.Stop();
     }
 
     public void EnablePlaneMovement()
@@ -55,11 +57,13 @@ public class Deactivate : MonoBehaviour
         {
             controllers[2].enabled = true;
             boatAudio.Play();
+            boatEngineAudio.Play();
         }
         else
         {
             controllers[2].enabled = false;
             boatAudio.Stop();
+            boatEngineAudio.Stop();
         }
     }
 }
