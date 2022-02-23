@@ -17,10 +17,15 @@ public class Deactivate : MonoBehaviour
     public void DisableAllControllersAndAudio()
     {
         foreach (var c in controllers) c.enabled = false;
+        foreach (var item in GOs) item.SetActive(false);
         planeAudio.Stop();
         carAudio.Stop();
         boatAudio.Stop();
         boatEngineAudio.Stop();
+    }
+    public void EnableCanvas()
+    {
+        foreach (var item in GOs) item.SetActive(true);
     }
 
     public void EnablePlaneMovement()

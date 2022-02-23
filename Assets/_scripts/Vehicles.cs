@@ -15,6 +15,8 @@ public class Vehicles : MonoBehaviour
     float rollforce;
      [SerializeField]
     float yawForce;
+     [SerializeField]
+    float autoForce;
 
     [SerializeField]
     float maxX, minX, maxY, minY, maxZ, minZ;
@@ -55,7 +57,7 @@ public class Vehicles : MonoBehaviour
         _roll = Input.GetAxis("Horizontal");
         if (isAutoThruster && isFlyable)
         {
-            _forwardMov = 0.08f;
+            _forwardMov = autoForce;
         }
         else if (!isAutoThruster && isFlyable)
         {
@@ -67,7 +69,7 @@ public class Vehicles : MonoBehaviour
         }
         else if (isAutoThruster && !isFlyable)
         {
-            _forwardMov = .08f;
+            _forwardMov = autoForce;
         }
         else if(!isAutoThruster && !isFlyable)
         {

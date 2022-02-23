@@ -337,10 +337,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFlyable: 1
-  isAutoThruster: 0
+  isAutoThruster: 1
   manualthruster: 0.9
   rollforce: 30
   yawForce: 150
+  autoForce: 0.55
   maxX: 4
   minX: -4
   maxY: 9.5
@@ -1100,6 +1101,7 @@ MonoBehaviour:
   manualthruster: 0
   rollforce: 0
   yawForce: 0
+  autoForce: 0
   maxX: 0
   minX: 0
   maxY: 0
@@ -1137,7 +1139,10 @@ MonoBehaviour:
   - {fileID: 2044247174}
   - {fileID: 892975951}
   - {fileID: 1368456251}
-  GOs: []
+  GOs:
+  - {fileID: 1082225079}
+  - {fileID: 1411937806}
+  - {fileID: 1597143694}
   planeAudio: {fileID: 510647512}
   carAudio: {fileID: 510647513}
   boatAudio: {fileID: 510647514}
@@ -2731,6 +2736,7 @@ MonoBehaviour:
   manualthruster: 0.9
   rollforce: 30
   yawForce: 0
+  autoForce: 0.55
   maxX: 4
   minX: -4
   maxY: 0
@@ -5357,6 +5363,7 @@ MonoBehaviour:
   manualthruster: 0.9
   rollforce: 30
   yawForce: 0
+  autoForce: 0.55
   maxX: 4
   minX: -4
   maxY: 0.5
