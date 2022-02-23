@@ -10,8 +10,7 @@ public class VehiclesUI : MonoBehaviour
 
     //Sets the name of the object this script is attached to
     protected void SetName()
-    {   
-        //polymorphisme     
+    {  
         txt.text = gameObject.name;
     }
 

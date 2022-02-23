@@ -6,8 +6,7 @@ public class Deactivate : MonoBehaviour
     [SerializeField] GameObject[] GOs;
     [SerializeField] AudioSource planeAudio;
     [SerializeField] AudioSource carAudio;
-    [SerializeField] AudioSource boatAudio;
-    
+    [SerializeField] AudioSource boatAudio;    
 
     void Start()
     {
@@ -28,13 +27,14 @@ public class Deactivate : MonoBehaviour
         {
             controllers[0].enabled = true;
             planeAudio.Play();
+            controllers[3].enabled = true;
         }
         else
         {
             controllers[0].enabled = false;
             planeAudio.Stop();
-        }
-       
+            controllers[3].enabled = false;
+        }       
     }
     public void EnableCarMovement()
     {
