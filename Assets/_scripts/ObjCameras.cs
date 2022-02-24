@@ -11,6 +11,5 @@ public class ObjCameras : VehiclesCamera
     public void ClickedBack()
     {
         ZoomOutView();        
-    }
-    
+    }    
 }

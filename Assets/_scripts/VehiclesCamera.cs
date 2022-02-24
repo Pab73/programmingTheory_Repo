@@ -24,12 +24,10 @@ public class VehiclesCamera : MonoBehaviour
     protected void ZoomOutView()
     {
         obj.GetComponentInChildren<Canvas>().sortingOrder = 0;
-        deactivate.DisableAllControllersAndAudio();
         objCamera.GetComponent<AudioListener>().enabled = false;
         objCamera.SetActive(false);
         mainCam.SetActive(true);
         mainCam.GetComponent<AudioListener>().enabled = true;
-        objCameraCanvas.SetActive(true);
-        
+        objCameraCanvas.SetActive(true);        
     }
 }

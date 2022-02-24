@@ -9,5 +9,10 @@ public class StartingCode : MonoBehaviour
     public void StartNew()
     {
         SceneManager.LoadScene(1);
-    }   
+    }
+    public void ExitProject()
+    {
+        Application.Quit();
+    }
+    
 }
