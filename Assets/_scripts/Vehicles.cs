@@ -1,50 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 //Base class
 public class Vehicles : MonoBehaviour
 {
-    [SerializeField]
-    protected bool isFlyable;
-    [SerializeField]
-    protected bool isAutoThruster;
-    [SerializeField]
-    float manualthruster;
-     [SerializeField]
-    float rollforce;
-     [SerializeField]
-    float yawForce;
-     [SerializeField]
-    float autoForce;
-
-    [SerializeField]
-    float maxX, minX, maxY, minY, maxZ, minZ;
-    float _yaw;
-    float _pitch;
-    float _roll;
-    float _forwardMov;
+    [Header("Set Boolean corresponding to the vehicle:")]
+    [SerializeField] protected bool isFlyable;
+    [SerializeField] protected bool isAutoThruster;
+    [SerializeField] protected bool isfloatable;
+    [Header("Add extra power or force:")]
+    [SerializeField] float addManualthruster;
+    [SerializeField] float addRollforce;
+    [SerializeField] float addYawForce;
+    [SerializeField] float addPitchForce;
+    [SerializeField] float addAutoForce;
+    [Header("Set local boundary:")]
+    [SerializeField] float maxX;
+    [SerializeField] float minX;
+    [SerializeField] float maxY;
+    [SerializeField] float minY;
+    [SerializeField] float maxZ;
+    [SerializeField] float minZ;
+    [Header("Read both mouse and keyboard axis input:")]
+    [SerializeField] float _yaw;
+    [SerializeField] float _pitch;
+    [SerializeField] float _roll;
+    [SerializeField] float _forwardMov;
 
     //encapsulation
-    public float Yaw { get => _yaw;  private set => _yaw = value; }
+    public float Yaw { get => _yaw; private set => _yaw = value; }
     public float Pitch { get => _pitch; private set => _pitch = value; }
     public float Roll { get => _roll; private set => _roll = value; }
-    public float ForwardMov
-    {
-        get => _forwardMov;
-        private set => _forwardMov = value;
-    }
+    public float ForwardMov { get => _forwardMov; private set => _forwardMov = value; }
 
     //overloading
-    protected  void Move(float roll, float forwardMov)
-    {        
-        transform.Translate(new Vector3(0.0f, 0.0f, forwardMov) * Time.deltaTime * manualthruster);
-        transform.Rotate(0.0f, roll * Time.deltaTime * rollforce, 0.0f);
+    protected void Move(float roll, float forwardMov)
+    {
+        transform.Translate(new Vector3(0.0f, 0.0f, forwardMov) * Time.deltaTime * addManualthruster);
+        transform.Rotate(0.0f, roll * Time.deltaTime * addRollforce, 0.0f);
     }
-    protected  void Move(float yaw ,float pitch, float roll , float forwardMov)
-    {        
-        transform.Translate(new Vector3(0.0f, 0.0f, forwardMov) * Time.deltaTime * manualthruster);
-        transform.Rotate(pitch, yaw * Time.deltaTime * yawForce, -roll * Time.deltaTime * rollforce);        
+    protected void Move(float pitch, float yaw, float roll, float forwardMov)
+    {
+        transform.Translate(new Vector3(0.0f, 0.0f, forwardMov) * Time.deltaTime * addManualthruster);
+        transform.Rotate(pitch * addPitchForce, yaw * Time.deltaTime * addYawForce, -roll * Time.deltaTime * addRollforce);
     }
     protected void SetBoundary()
     {
@@ -55,11 +51,13 @@ public class Vehicles : MonoBehaviour
         _yaw = Input.GetAxis("Mouse X");
         _pitch = Input.GetAxis("Mouse Y") * -1;
         _roll = Input.GetAxis("Horizontal");
-        if (isAutoThruster && isFlyable)
+
+        if (isAutoThruster)
         {
-            _forwardMov = autoForce;
+            _forwardMov = addAutoForce;
         }
-        else if (!isAutoThruster && isFlyable)
+
+        if (isFlyable && !isAutoThruster)
         {
             _forwardMov = Input.GetAxis("Vertical");
             if (_forwardMov < 0)
@@ -67,17 +65,18 @@ public class Vehicles : MonoBehaviour
                 _forwardMov = 0;
             }
         }
-        else if (isAutoThruster && !isFlyable)
+
+        if (!isFlyable && !isAutoThruster)
         {
-            _forwardMov = autoForce;
-        }
-        else if(!isAutoThruster && !isFlyable)
-        {
+            if (!isfloatable && _forwardMov == 0)
+            {
+                _roll = 0;
+            }
             if (_forwardMov < 0)
             {
                 _roll *= -1;
             }
             _forwardMov = Input.GetAxis("Vertical");
-        }       
+        }
     }
 }

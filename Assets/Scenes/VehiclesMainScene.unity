@@ -255,16 +255,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFlyable: 1
   isAutoThruster: 1
-  manualthruster: 0.9
-  rollforce: 30
-  yawForce: 150
-  autoForce: 0.55
+  isfloatable: 0
+  addManualthruster: 1
+  addRollforce: 35
+  addYawForce: 50
+  addPitchForce: 0.5
+  addAutoForce: 1
   maxX: 5.5
   minX: -5.5
   maxY: 8.5
   minY: 1
   maxZ: 4
   minZ: -4
+  _yaw: 0
+  _pitch: 0
+  _roll: 0
+  _forwardMov: 0
 --- !u!114 &62883810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,7 +393,7 @@ GameObject:
   - component: {fileID: 279521222}
   - component: {fileID: 279521221}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: ButtonZoomRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -983,14 +989,14 @@ GameObject:
   m_Component:
   - component: {fileID: 510647508}
   - component: {fileID: 510647507}
-  - component: {fileID: 510647509}
   - component: {fileID: 510647511}
   - component: {fileID: 510647510}
+  - component: {fileID: 510647516}
+  - component: {fileID: 510647509}
   - component: {fileID: 510647512}
   - component: {fileID: 510647513}
   - component: {fileID: 510647514}
   - component: {fileID: 510647515}
-  - component: {fileID: 510647516}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -1012,16 +1018,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFlyable: 0
   isAutoThruster: 0
-  manualthruster: 0
-  rollforce: 0
-  yawForce: 0
-  autoForce: 0
+  isfloatable: 0
+  addManualthruster: 0
+  addRollforce: 0
+  addYawForce: 0
+  addPitchForce: 0
+  addAutoForce: 0
   maxX: 0
   minX: 0
   maxY: 0
   minY: 0
   maxZ: 0
   minZ: 0
+  _yaw: 0
+  _pitch: 0
+  _roll: 0
+  _forwardMov: 0
 --- !u!4 &510647508
 Transform:
   m_ObjectHideFlags: 0
@@ -2057,7 +2069,7 @@ GameObject:
   - component: {fileID: 578800712}
   - component: {fileID: 578800711}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ButtonZoomLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3039,16 +3051,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFlyable: 0
   isAutoThruster: 0
-  manualthruster: 0.9
-  rollforce: 30
-  yawForce: 0
-  autoForce: 0.55
+  isfloatable: 1
+  addManualthruster: 1
+  addRollforce: 40
+  addYawForce: 1
+  addPitchForce: 1
+  addAutoForce: 1
   maxX: 4
   minX: -4
   maxY: 0
   minY: 0
   maxZ: 3.5
   minZ: -3.5
+  _yaw: 0
+  _pitch: 0
+  _roll: 0
+  _forwardMov: 0
 --- !u!114 &892975952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3480,7 +3498,7 @@ GameObject:
   - component: {fileID: 1027303234}
   - component: {fileID: 1027303233}
   m_Layer: 5
-  m_Name: ButtonExit (1)
+  m_Name: ButtonExit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3986,7 +4004,7 @@ GameObject:
   - component: {fileID: 1210177295}
   - component: {fileID: 1210177294}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: ButtonZoomMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4410,7 +4428,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
@@ -4420,7 +4438,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press "ESC" To Stop.
+  m_Text: Press "ESC" To Stop Vehicle.
 --- !u!222 &1347515258
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5266,7 +5284,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
@@ -5276,7 +5294,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press "ESC" To Stop.
+  m_Text: Press "ESC" To Stop Vehicle.
 --- !u!222 &1705907463
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5775,16 +5793,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFlyable: 0
   isAutoThruster: 0
-  manualthruster: 0.9
-  rollforce: 30
-  yawForce: 0
-  autoForce: 0.55
+  isfloatable: 0
+  addManualthruster: 1
+  addRollforce: 50
+  addYawForce: 1
+  addPitchForce: 1
+  addAutoForce: 1
   maxX: 4
   minX: -4
   maxY: 0.35
   minY: 0.35
   maxZ: 3.5
   minZ: -3.5
+  _yaw: 2.43
+  _pitch: 0
+  _roll: 0
+  _forwardMov: 0
 --- !u!4 &2044247178
 Transform:
   m_ObjectHideFlags: 0
@@ -5890,7 +5914,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
@@ -5900,7 +5924,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press "ESC" To Stop.
+  m_Text: Press "ESC" To Stop Vehicle.
 --- !u!222 &2095802385
 CanvasRenderer:
   m_ObjectHideFlags: 0

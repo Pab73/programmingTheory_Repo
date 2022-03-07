@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : Vehicles // child class inheritance from base class Vehicles
-{   
+{    
     // Update is called once per frame
     void Update()
-    {
+    {        
         //abstract
-        GetInputMoveMent();
+        GetInputMoveMent();        
+
         if (isFlyable)
-        {
+        {           
             ////overloading (Polymorphisme)
-            Move(Yaw, Pitch, Roll, ForwardMov);            
+            Move(Pitch, Yaw, Roll, ForwardMov);            
         }
         else 
         {
